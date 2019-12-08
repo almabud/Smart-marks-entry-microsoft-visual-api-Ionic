@@ -1,0 +1,68 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+            Samart marks entry
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid no-padding>
+
+    </ion-grid>
+    <ion-grid no-padding>
+        <ion-row *ngIf="base64Image">
+            <ion-col no-padding>
+                <img class="preview-image" [src]="base64Image" />
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col padding>
+                <ion-list>
+                    <ion-item>
+                        <ion-label>Semester</ion-label>
+                        <ion-select placeholder="Select Semester" interface="action-sheet" (ionChange)="semester=$event.detail.value">
+                            <ion-select-option value="Fall'19">Fall'19</ion-select-option>
+                        </ion-select>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label>Exam</ion-label>
+                        <ion-select placeholder="Select exam" interface="action-sheet" (ionChange)="exam=$event.detail.value">
+                            <ion-select-option value="mid">Midterm</ion-select-option>
+                            <ion-select-option value="final">Final</ion-select-option>
+
+                        </ion-select>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-label>Section</ion-label>
+                        <ion-select placeholder="Select Section" interface="action-sheet" (ionChange)="section=$event.detail.value">
+                            <ion-select-option value="PC-A">PC-A</ion-select-option>
+                            <ion-select-option value="PC-B">PC-B</ion-select-option>
+                            <ion-select-option value="PC-C">PC-C</ion-select-option>
+                            <ion-select-option value="PC-D">PC-D</ion-select-option>
+                        </ion-select>
+                    </ion-item>
+                    <ion-item *ngIf="idNumber">
+                        <ion-label position="floating">Student ID</ion-label>
+                        <ion-input type="text" name="studentId" [value]="idNumber"></ion-input>
+                    </ion-item>
+                    <ion-item *ngIf="idNumber">
+                        <ion-label position="floating">Obtained Marks</ion-label>
+                        <ion-input type="text" name="obtainedMarks" [value]="obtainedMarks"></ion-input>
+                    </ion-item>
+                    <ion-row class="ion-margin">
+                        <ion-col class="ion-text-center">
+                            <ion-button (click)="selectImage()">Scan script</ion-button>
+                            <ion-button *ngIf="idNumber">Upload</ion-button>
+                        </ion-col>
+                    </ion-row>
+                </ion-list>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+</ion-content>

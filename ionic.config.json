@@ -1,0 +1,7 @@
+{
+  "name": "smart_mark_entry",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

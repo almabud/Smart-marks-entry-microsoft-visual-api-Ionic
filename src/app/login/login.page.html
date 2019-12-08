@@ -1,0 +1,51 @@
+<ion-content>
+    <div class="overlay"></div>
+    <ion-grid style="height: 100%" class="login-page ion-no-padding">
+        <ion-row justify-content-center align-items-center style="height: 100%">
+            <ion-col>
+                <ion-card class="login-card">
+                    <ion-card-header justify-content-center align-items-center>
+                        <!-- <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+                        <ion-card-title>Card Title</ion-card-title> -->
+                        <ion-row justify-content-center align-items-center>
+                            <ion-col size="12" offset="5">
+                                <ion-img src="../../assets/logo2.png" style="width: 60% !important;" class="ion-text-center"></ion-img>
+                            </ion-col>
+                        </ion-row>
+
+                    </ion-card-header>
+
+                    <ion-card-content>
+                        <form name="form" [formGroup]="loginForm" (ngSubmit)="onLogin()">
+                            <ion-grid>
+                                <ion-row>
+                                    <ion-col>
+                                        <ion-item>
+                                            <ion-label position="floating">Teacher ID</ion-label>
+                                            <ion-input type="text" formControlName="userId" name="userId" required></ion-input>
+                                        </ion-item>
+                                    </ion-col>
+                                </ion-row>
+                                <ion-row>
+                                    <ion-col>
+                                        <ion-item>
+                                            <ion-label position="floating">Password</ion-label>
+                                            <ion-input type="password" formControlName="password" name="password" required></ion-input>
+                                        </ion-item>
+                                    </ion-col>
+                                </ion-row>
+                                <ion-row>
+                                    <ion-col>
+                                        <ion-button type="submit" color="primary" expand="block" [disabled]="!loginForm.valid">
+                                            Login
+                                        </ion-button>
+                                    </ion-col>
+                                </ion-row>
+                            </ion-grid>
+                        </form>
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
